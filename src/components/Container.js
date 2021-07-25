@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import UserList from './userList';
+import UserList from "./UserList";
 
 const Container = () => {
-    return (
-        <div>
-					<UserList />
-        </div>
-    );
-}
+	return (
+		<div>
+			<UserList />
+		</div>
+	);
+};
 
 export default Container;

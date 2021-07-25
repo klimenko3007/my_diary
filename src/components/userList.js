@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchUsers } from "../reducers/user";
+import UserThumb from "./UserThumb";
+import LoaderComponent from "./LoaderComponent";
 
 const UserList = () => {
 	const [page, setPage] = useState(5);
@@ -30,27 +32,27 @@ const UserList = () => {
 	};
 
 	return (
-		<div
-			onScroll={() => onScroll()}
-			ref={listDiv}
-			style={{ overflowY: "scroll", height: "100vh", border: "1px solid blue" }}
-		>
-			{loader && <p>Loading ...</p>}
-			{users.map((item) => {
-				return (
-					<div key={item.id}>
-						<p>{item.email}</p>
-						<p>{item.first_name}</p>
-						<p>{item.last_name}</p>
-						<img
-							src={item.avatar}
-							alt={`${item.first_name} ${item.first_name}`}
-						/>
+		<>
+			{loader ? (
+				<LoaderComponent />
+			) : (
+				<div
+					onScroll={() => onScroll()}
+					ref={listDiv}
+					className="container"
+				>
+					<h1 className="heading">Our users</h1>
+					<div className="cards-container">
+						{users.map((item) => (
+							<UserThumb item={item} key={item.id} />
+						))}
 					</div>
-				);
-			})}
-		{showText && <p>There are no more users to load</p>}
-		</div>
+					{showText && (
+						<p className="message">There are no more users to load</p>
+					)}
+				</div>
+			)}
+		</>
 	);
 };
 

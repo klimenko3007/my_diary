@@ -5,9 +5,70 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(33, 33, 33);
+  color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  height: 100vh;
+  /* overflow-y: scroll; */
+}
+
+.container {
+  overflow-y: scroll;
+  height: 100vh;
+}
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+}
+.cards-container {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 24px;
+}
+.email {
+  font-style: italic;
+}
+.message {
+  text-align: center;
+}
+
+@media (min-width: 650px) {
+  .cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    width: 45%;
+  }
+  .avatar {
+    width: 200px;
+    height: 200px;
+  }
 }
