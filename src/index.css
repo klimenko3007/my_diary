@@ -15,25 +15,23 @@ code {
 }
 
 .loader {
-  position: absolute;
-  inset: 0;
   text-align: center;
-  height: 100vh;
-  /* overflow-y: scroll; */
 }
 
 .container {
-  overflow-y: scroll;
   height: 100vh;
 }
+
 .heading {
   text-align: center;
   text-transform: uppercase;
 }
+
 .cards-container {
   display: flex;
   flex-direction: column;
 }
+
 .card {
   text-align: center;
   padding: 5px;
@@ -51,9 +49,18 @@ code {
   font-weight: bold;
   font-size: 24px;
 }
+
 .email {
   font-style: italic;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
 }
+
+.email:hover {
+  text-decoration: underline;
+}
+
 .message {
   text-align: center;
 }
@@ -63,10 +70,14 @@ code {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 750px;
+    margin: 0 auto;
   }
+
   .card {
     width: 45%;
   }
+
   .avatar {
     width: 200px;
     height: 200px;

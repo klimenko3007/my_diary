@@ -11,7 +11,7 @@ const UserThumb = ({ item }) => {
 			<p className="name">
 				{item.first_name} {item.last_name}
 			</p>
-			<p className="email">{item.email}</p>
+			<a href={`mailto:${item.email}`} className="email">{item.email}</a>
 		</div>
 	);
 };
