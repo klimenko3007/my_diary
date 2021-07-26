@@ -1,9 +1,10 @@
 # Code test for MyDiary 
+This is the code test for the MyDiary frontend developer position.
 
 ## Description: tasks
-- Fetchuserdatafrom https://reqres.in/
-- Displaythoseusersinascrollableviewthatlazyloadsmoreusers when you’ve reached the bottom of the list. If there are no more users to load it should indicate that there are no more users.
-- Beresponsive,lookgreatandworkflawlesslyondifferentdevices, especially various mobile screens.
+- Fetch user data from https://reqres.in/
+- Display those users in a scrollable view that lazyloads more users when you’ve reached the bottom of the list. If there are no more users to load it should indicate that there are no more users.
+- Be responsive,look great and work flawlessly on different devices, especially various mobile screens.
 
 ## View it live
 
