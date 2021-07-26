@@ -40,7 +40,6 @@ export const fetchUsers = (page) => {
 				setTimeout(() => dispatch(user.actions.setLoader(false)), 3000);
 				setTimeout(() => {
 					batch(() => {
-						console.log(data);
 						dispatch(user.actions.setError(null));
 						dispatch(user.actions.setItems(data.data));
 						dispatch(user.actions.setTotalPages(data.total_pages));
@@ -50,7 +49,6 @@ export const fetchUsers = (page) => {
 			.catch((error) => {
 				dispatch(user.actions.setError({ message: error.message }));
 				dispatch(user.actions.setLoader(false));
-				console.log(error);
 			});
 	};
 };
