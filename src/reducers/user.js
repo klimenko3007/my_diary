@@ -37,14 +37,16 @@ export const fetchUsers = (page) => {
 		fetch(BASIC_URL(page))
 			.then((res) => res.json())
 			.then((data) => {
-				setTimeout(() => dispatch(user.actions.setLoader(false)), 3000)
-				setTimeout(() => {batch(() => {
-					console.log(data)
-					dispatch(user.actions.setError(null));
-					dispatch(user.actions.setItems(data.data));
-					dispatch(user.actions.setTotalPages(data.total_pages));
-				});}, 3000)
+				setTimeout(() => dispatch(user.actions.setLoader(false)), 3000);
+				setTimeout(() => {
+					batch(() => {
+						console.log(data);
+						dispatch(user.actions.setError(null));
+						dispatch(user.actions.setItems(data.data));
+						dispatch(user.actions.setTotalPages(data.total_pages));
+					});
+				}, 3000);
 			})
-			.catch((error) => dispatch(user.actions.setError(error)))
+			.catch((error) => dispatch(user.actions.setError(error)));
 	};
 };

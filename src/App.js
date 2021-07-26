@@ -6,16 +6,16 @@ import Container from "./components/Container";
 import user from "./reducers/user";
 
 const reducer = combineReducers({
-  user: user.reducer,
+	user: user.reducer,
 });
 const store = configureStore({ reducer });
 
 const App = () => {
-  return (
-    <Provider store={store}>
-      <Container />
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<Container />
+		</Provider>
+	);
 };
 
 export default App;
