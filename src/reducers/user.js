@@ -47,6 +47,10 @@ export const fetchUsers = (page) => {
 					});
 				}, 3000);
 			})
-			.catch((error) => dispatch(user.actions.setError(error)));
+			.catch((error) => {
+				dispatch(user.actions.setError({ message: error.message }));
+				dispatch(user.actions.setLoader(false));
+				console.log(error);
+			});
 	};
 };

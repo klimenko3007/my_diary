@@ -13,6 +13,7 @@ const UserList = () => {
 	const users = useSelector((store) => store.user.items);
 	const loader = useSelector((store) => store.user.loader);
 	const pages = useSelector((store) => store.user.totalPages);
+	const error = useSelector((store) => store.user.error);
 
 	useEffect(() => {
 		dispatch(fetchUsers(page));
@@ -37,6 +38,9 @@ const UserList = () => {
 				{loader && <LoaderComponent />}
 				{showText && (
 					<p className="message">There are no more users to load!</p>
+				)}
+				{error && (
+					<p className="message">{error.message}</p>
 				)}
 			</div>
 		</section>
