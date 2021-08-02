@@ -10,14 +10,14 @@ const UserList = () => {
 	const [page, setPage] = useState(5);
 	const [showText, setShowText] = useState(false);
 	const dispatch = useDispatch();
-	const users = useSelector((store) => store.user.items);
-	const loader = useSelector((store) => store.user.loader);
-	const pages = useSelector((store) => store.user.totalPages);
-	const error = useSelector((store) => store.user.error);
+	const users = useSelector(store => store.user.items);
+	const loader = useSelector(store => store.user.loader);
+	const pages = useSelector(store => store.user.totalPages);
+	const error = useSelector(store => store.user.error);
 
 	useEffect(() => {
 		dispatch(fetchUsers(page));
-	}, [dispatch, page]);
+	}, [page]);
 
 	const onBottomFetch = () => {
 		if (pages > 1) {
@@ -31,7 +31,7 @@ const UserList = () => {
 			<h1 className="heading">Our users</h1>
 			<div className="container">
 				<div className="cards-container">
-					{users.map((item) => (
+					{users.map(item => (
 						<UserThumb item={item} key={item.id} />
 					))}
 				</div>
@@ -39,9 +39,7 @@ const UserList = () => {
 				{showText && (
 					<p className="message">There are no more users to load!</p>
 				)}
-				{error && (
-					<p className="message">{error.message}</p>
-				)}
+				{error && <p className="message">{error.message}</p>}
 			</div>
 		</section>
 	);
